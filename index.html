@@ -4,18 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f1826">
+<meta name="color-scheme" content="light only">
 <title>مهناز ♡ حامد — دعوت‌نامه عروسی</title>
-
-<!--
-  ═══════════════════════════════════════════════════════════
-  ═══════════════════════════════════════════════════════════
--->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;500&family=Vazirmatn:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme: light only;
   --navy:#1a2332; --navy-deep:#0f1826;
   --ink:#1c1e22; --ink-soft:#454a52; --muted:#8b8985;
   --pearl:#faf7f2; --cream:#f2ede4;
@@ -26,18 +23,37 @@
   --ease:cubic-bezier(.22,.85,.28,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light only}
 body{
   font-family:'Vazirmatn',system-ui,sans-serif;
   background:var(--pearl); color:var(--ink);
   line-height:2; overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
+  color-scheme:light only;
 }
 body.locked{overflow:hidden}
 img,svg{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--champagne);color:var(--navy)}
+
+/* ═══════════ DARK MODE GUARD — force light appearance ═══════════ */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background: #faf7f2 !important;
+    color: #1c1e22 !important;
+    color-scheme: light only !important;
+  }
+  #envelope-screen { color-scheme: light only; }
+  #site { color-scheme: light only; }
+  .hero { background-color: #fdfaf5; }
+  .invite { background-color: #faf7f2; }
+  .details { background-color: #faf7f2; }
+  .notice-box { background-color: #fffdf7; }
+  .rsvp-box { background-color: #fffdfa; }
+  .venue-block { background-color: #fffdfa; }
+  input, textarea, button { color-scheme: light only; }
+}
 
 .grain{
   position:fixed;inset:0;z-index:900;pointer-events:none;opacity:.035;
@@ -138,7 +154,6 @@ a{color:inherit;text-decoration:none}
 .c-tl{top:22px;left:22px} .c-tr{top:22px;right:22px;transform:scaleX(-1)}
 .c-bl{bottom:22px;left:22px;transform:scaleY(-1)} .c-br{bottom:22px;right:22px;transform:scale(-1)}
 
-/* ═══ env-wrap — kept inside viewport, centered ═══ */
 .env-wrap{
   position:relative;
   z-index:3;
@@ -184,7 +199,6 @@ a{color:inherit;text-decoration:none}
 }
 .env-sub{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.55em;direction:ltr;color:rgba(230,211,179,.7);}
 
-/* ENVELOPE family names */
 .env-family{
   margin-top:6px;
   font-family:'Noto Nastaliq Urdu','Amiri',serif;
@@ -220,7 +234,6 @@ a{color:inherit;text-decoration:none}
 .env-accent::before,.env-accent::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(212,188,133,.6),transparent)}
 .env-accent .dot{width:5px;height:5px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 8px rgba(212,188,133,.8)}
 
-/* ═══ env-stage — always centered, no overflow ═══ */
 .env-stage{
   perspective:1500px;
   width:100%;
@@ -376,7 +389,6 @@ section{position:relative}
 .hero-names em{font-style:normal;font-size:.4em;margin:0 .3em;vertical-align:middle;display:inline-block;background:linear-gradient(180deg,#e6c88a,#8a6a3c 60%,#d4b483);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 14px rgba(184,151,90,.7))}
 .hero-latin{font-family:'Cormorant Garamond',serif;font-size:12.5px;letter-spacing:.65em;direction:ltr;color:var(--muted);margin-top:-4px}
 
-/* HERO family names */
 .family-names{
   margin-top:12px;
   padding:12px 28px 20px;
@@ -426,7 +438,6 @@ section{position:relative}
 .ribbon-banner::before{left:-7px}
 .ribbon-banner::after{right:-7px}
 
-/* hero photo */
 .hero-photo{position:relative;width:100%;max-width:420px;margin:0 auto;padding:14px;filter:drop-shadow(0 30px 50px rgba(42,54,72,.35));}
 .arch-pearls{position:absolute;inset:-8px;width:calc(100% + 16px);height:calc(100% + 16px);pointer-events:none;z-index:3;filter:drop-shadow(0 4px 10px rgba(138,106,60,.4));}
 .arch-pearls svg{width:100%;height:100%;overflow:visible}
@@ -452,14 +463,12 @@ section{position:relative}
 .scroll-cue::after{content:'';width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:cueDrop 2.4s ease-in-out infinite}
 @keyframes cueDrop{0%,100%{opacity:.35;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
 
-/* generic */
 .wrap{max-width:880px;margin:0 auto;padding:0 24px}
 .sec{padding:130px 0;position:relative}
 .sec-head{text-align:center;margin-bottom:56px;position:relative;z-index:2}
 .sec-title{font-family:'Noto Nastaliq Urdu','Amiri',serif;font-weight:400;font-size:clamp(32px,6vw,48px);line-height:2;padding-bottom:14px;color:var(--ink)}
 .sec-en{display:block;font-family:'Cormorant Garamond',serif;font-size:11.5px;letter-spacing:.55em;direction:ltr;color:var(--gold);text-transform:uppercase;margin-top:8px}
 
-/* INVITATION */
 .invite{background:radial-gradient(ellipse 62% 46% at 50% 30%, rgba(224,204,166,.42), transparent 68%), linear-gradient(180deg,#faf7f2 0%,#f2ede4 100%);text-align:center;}
 .invite::before{content:'';position:absolute;inset:22px;border:1px solid rgba(184,151,90,.22);pointer-events:none}
 .invite::after{content:'';position:absolute;inset:30px;border:1px dashed rgba(184,151,90,.13);pointer-events:none}
@@ -478,7 +487,6 @@ section{position:relative}
 .invite-pearls::before,.invite-pearls::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,151,90,.45),transparent)}
 .invite .sign{margin-top:36px;font-family:'Noto Nastaliq Urdu','Amiri',serif;font-size:26px;line-height:2.2;position:relative;z-index:2;padding-bottom:10px;}
 
-/* NOTICE */
 .notice-sec{padding:0 24px 130px;background:linear-gradient(180deg,#f2ede4 0%,#faf7f2 100%);position:relative;}
 .notice-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,162,145,.35), transparent 70%);pointer-events:none;}
 .notice-box{
@@ -502,7 +510,6 @@ section{position:relative}
 .notice-text b{font-weight:600;background:linear-gradient(180deg,#c9a468,#8a6f3c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:1.15em;padding:0 4px;}
 .notice-emphasis{display:inline-block;margin-top:22px;padding:10px 26px 16px;border-top:1px solid rgba(184,151,90,.4);border-bottom:1px solid rgba(184,151,90,.4);font-family:'Noto Nastaliq Urdu','Amiri',serif;font-size:clamp(17px,3vw,22px);color:var(--gold-deep);letter-spacing:.03em;line-height:2.2;}
 
-/* DETAILS */
 .details{background:radial-gradient(ellipse 58% 44% at 50% 0%, rgba(224,204,166,.32), transparent 65%), var(--pearl)}
 .rings-photo{position:relative;width:170px;height:170px;margin:0 auto 46px;filter:drop-shadow(0 20px 36px rgba(42,54,72,.3));}
 .rings-circle{position:absolute;inset:14px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#f4ead6,#e0cca6 50%,#c9a291);box-shadow:0 0 0 1px rgba(184,151,90,.55), 0 0 0 5px rgba(255,255,255,.7), 0 0 0 6px rgba(184,151,90,.3);z-index:2;}
@@ -533,7 +540,6 @@ section{position:relative}
 .map-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.4}
 .map-btn:hover{background:var(--navy);color:#f6ead4;border-color:var(--navy);transform:translateY(-2px);box-shadow:0 12px 26px rgba(42,54,72,.4)}
 
-/* COUNTDOWN */
 .count-sec{background:radial-gradient(ellipse 76% 66% at 50% 0%, rgba(184,151,90,.28), transparent 65%), radial-gradient(ellipse 48% 42% at 12% 90%, rgba(201,162,145,.14), transparent 60%), radial-gradient(ellipse 44% 40% at 88% 15%, rgba(224,204,166,.1), transparent 55%), linear-gradient(165deg,#1a2332 0%,#0a1018 100%);color:#f4ead6;text-align:center;overflow:hidden;}
 .count-sec::before{content:'';position:absolute;inset:18px;border:1px solid rgba(224,204,166,.18);pointer-events:none}
 .count-sec::after{content:'';position:absolute;inset:26px;border:1px dashed rgba(224,204,166,.1);pointer-events:none}
@@ -548,7 +554,6 @@ section{position:relative}
 .cd-num{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,7.6vw,58px);font-weight:400;line-height:1;color:var(--gold-soft);direction:ltr;text-shadow:0 0 26px rgba(212,188,133,.7), 0 0 8px rgba(212,188,133,.5)}
 .cd-lbl{font-size:10px;letter-spacing:.2em;color:rgba(224,204,166,.65);margin-top:12px}
 
-/* FOOTER */
 .footer{background:radial-gradient(ellipse 76% 50% at 50% 0%, rgba(184,151,90,.22), transparent 65%), radial-gradient(ellipse 44% 34% at 85% 90%, rgba(42,54,72,.5), transparent 60%), linear-gradient(165deg,#1a2332,#070b12);color:rgba(224,204,166,.8);text-align:center;padding:120px 24px 100px;position:relative;overflow:hidden;}
 .footer::before{content:'';position:absolute;inset:18px;border:1px solid rgba(224,204,166,.16);pointer-events:none}
 .footer::after{content:'';position:absolute;inset:26px;border:1px dashed rgba(224,204,166,.08);pointer-events:none}
@@ -575,7 +580,6 @@ section{position:relative}
 }
 .footer-names em{font-style:normal;font-size:.48em;margin:0 .25em;vertical-align:middle;display:inline-block;filter:drop-shadow(0 0 12px rgba(212,188,133,.8))}
 
-/* footer family */
 .footer-family{
   margin:14px auto 0;
   position:relative;z-index:2;
@@ -615,7 +619,6 @@ section{position:relative}
 .footer-pearls::before,.footer-pearls::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(212,188,133,.5),transparent)}
 .footer-note{font-size:12.5px;line-height:2.3;color:rgba(224,204,166,.72);max-width:460px;margin:30px auto 0;position:relative;z-index:2}
 
-/* DESIGN BAND */
 .design-band{position:relative;padding:34px 24px;background:linear-gradient(180deg,#070b12,#05080d);border-top:1px solid rgba(224,204,166,.18);text-align:center;overflow:hidden;}
 .design-band::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:160px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,188,133,.85),transparent);}
 .design-inner{display:inline-flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;}
@@ -635,7 +638,6 @@ section{position:relative}
   .crest .mono{font-size:28px}
 }
 @media(max-width:640px){
-  /* fixed: envelope centered on mobile */
   #envelope-screen{padding:14px}
   .frame-a{inset:12px} .frame-b{inset:19px} .frame-c{inset:26px}
   .corner{width:32px;height:32px}
@@ -644,7 +646,7 @@ section{position:relative}
 
   .env-wrap{padding:0 10px}
   .env-stage{width:100%;max-width:100%;margin-top:22px;perspective:1200px}
-  .envelope{animation:none}   /* fix: stops the floating wobble that made it look tilted on mobile */
+  .envelope{animation:none}
 
   .env-seal{width:92px;height:92px}
   .seal-text{font-size:15px}
@@ -769,7 +771,6 @@ section{position:relative}
 <!-- ═══ SITE ═══ -->
 <main id="site">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-frame"></div>
     <div class="hero-garland">
@@ -915,12 +916,11 @@ section{position:relative}
     <div class="scroll-cue">Scroll</div>
   </section>
 
-  <!-- INVITATION -->
   <section class="sec invite">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="sec-en">With Love</span>
-        <h2 class="sec-title">دعوتید از صمیم قلب</h2>
+        <h2 class="sec-title">دعوتی از صمیم قلب</h2>
         <div class="baroque">
           <svg viewBox="0 0 180 24" fill="none" stroke="currentColor" stroke-width=".9">
             <path d="M0 12h40"/><path d="M40 12c3-6 8-6 12 0s9 6 12 0s9-6 12 0"/><path d="M76 12c4-5 8-5 12 0"/>
@@ -965,7 +965,6 @@ section{position:relative}
     </div>
   </section>
 
-  <!-- NOTICE -->
   <section class="notice-sec">
     <div class="notice-box reveal">
       <span class="notice-pearl np-tl"></span>
@@ -989,7 +988,6 @@ section{position:relative}
     </div>
   </section>
 
-  <!-- DETAILS -->
   <section class="sec details">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -1081,17 +1079,16 @@ section{position:relative}
       <div class="venue-block reveal">
         <div class="detail-label" style="margin-bottom:14px">Venue</div>
         <div class="venue-name">عمارت آقازاده شاندیز</div>
-        <p class="venue-addr"> خراسان رضوی،شاندیز، عمارت آقازاده</p>
+        <p class="venue-addr">خراسان رضوی، شاندیز، عمارت آقازاده</p>
         <div class="map-row">
           <a class="map-btn" id="btn-neshan" href="https://nshn.ir/34_b1RpgeJAWY0" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-11A6.5 6.5 0 0112 3.5 6.5 6.5 0 0118.5 10c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.2"/></svg>نشان
+            <svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-11A6.5 6.5 0 0112 3.5 6.5 6.5 0 0118.5 10c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.2"/></svg>مسیریابی
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COUNTDOWN -->
   <section class="sec count-sec">
     <div class="wrap">
       <div class="sec-head reveal" style="margin-bottom:0">
@@ -1121,7 +1118,6 @@ section{position:relative}
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <span class="footer-corner fc-tl"><svg viewBox="0 0 58 58"><path d="M4 4h18M4 4v18"/><path d="M4 4c12 0 20 8 20 20"/><circle cx="7" cy="7" r="1.8" fill="currentColor" stroke="none"/></svg></span>
     <span class="footer-corner fc-tr"><svg viewBox="0 0 58 58"><path d="M4 4h18M4 4v18"/><path d="M4 4c12 0 20 8 20 20"/><circle cx="7" cy="7" r="1.8" fill="currentColor" stroke="none"/></svg></span>
@@ -1149,7 +1145,6 @@ section{position:relative}
     <p class="footer-note">از حضور گرم و صمیمانه‌ی شما در این شب عزیز سپاسگزاریم.</p>
   </footer>
 
-  <!-- DESIGN BAND -->
   <div class="design-band">
     <div class="design-inner">
       <span class="db-line"></span>
@@ -1160,7 +1155,6 @@ section{position:relative}
     </div>
   </div>
 
-  <!-- MUSIC TOGGLE -->
   <button class="music-toggle paused" id="music-toggle" aria-label="پخش یا قطع موسیقی">
     <svg class="ico-play" viewBox="0 0 24 24">
       <path d="M9 5v14"/><path d="M15 5v14"/>
@@ -1181,7 +1175,6 @@ section{position:relative}
   const fa = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
   const toFa = n => String(n).replace(/\d/g, d => fa[d]);
 
-  /* petals */
   const petalBox = $('#petals');
   const petalPath = '<svg viewBox="0 0 20 20"><path d="M10 1c3 3 6 7 6 10s-3 5-6 5-6-2-6-5 3-7 6-10z" fill="currentColor" opacity=".85"/></svg>';
   for (let i = 0; i < 12; i++) {
@@ -1197,17 +1190,13 @@ section{position:relative}
     petalBox.appendChild(p);
   }
 
-  /* ═══ MUSIC ═══ */
   const music = $('#bg-music');
   const musicToggle = $('#music-toggle');
   let userPaused = false;
 
   function updateMusicIcon(){
-    if (music.paused) {
-      musicToggle.classList.add('paused');
-    } else {
-      musicToggle.classList.remove('paused');
-    }
+    if (music.paused) { musicToggle.classList.add('paused'); }
+    else { musicToggle.classList.remove('paused'); }
   }
 
   function playMusic(){
@@ -1215,27 +1204,17 @@ section{position:relative}
     music.volume = 0.55;
     const p = music.play();
     if (p && p.then) {
-      p.then(() => updateMusicIcon())
-       .catch(() => { musicToggle.classList.add('paused'); });
-    } else {
-      updateMusicIcon();
-    }
+      p.then(() => updateMusicIcon()).catch(() => { musicToggle.classList.add('paused'); });
+    } else { updateMusicIcon(); }
   }
 
   musicToggle.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (music.paused) {
-      userPaused = false;
-      playMusic();
-    } else {
-      userPaused = true;
-      music.pause();
-      updateMusicIcon();
-    }
+    if (music.paused) { userPaused = false; playMusic(); }
+    else { userPaused = true; music.pause(); updateMusicIcon(); }
   });
 
-  /* ═══ ENVELOPE OPEN ═══ */
   const envScreen = $('#envelope-screen');
   const envelope = $('#envelope');
   const seal = $('#seal');
@@ -1247,9 +1226,7 @@ section{position:relative}
     if (opened) return;
     opened = true;
     envelope.classList.add('open');
-
     playMusic();
-
     setTimeout(() => {
       envScreen.classList.add('hidden');
       document.body.classList.remove('locked');
@@ -1268,7 +1245,6 @@ section{position:relative}
     if (!opened && (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape')) { e.preventDefault(); openEnvelope(); }
   });
 
-  /* ═══ COUNTDOWN ═══ */
   const TARGET = new Date('2026-10-07T19:00:00+03:30').getTime();
   function tick(){
     const diff = Math.max(0, TARGET - Date.now());
@@ -1283,7 +1259,6 @@ section{position:relative}
   }
   tick(); setInterval(tick, 1000);
 
-  /* reveal */
   const io = new IntersectionObserver(entries => {
     entries.forEach(en => {
       if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
